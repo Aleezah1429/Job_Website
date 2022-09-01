@@ -60,13 +60,13 @@ After click the button of apply job, all job description, requirements and exper
 ## Job Search:
 Here we can easily search job
 
-<img src="https://user-images.githubusercontent.com/64039135/187982726-c4ebd918-942d-4ac5-b0cf-3a548b6da9ea.png" width="1000px" height="400px" />
+<img src="https://user-images.githubusercontent.com/64039135/187982726-c4ebd918-942d-4ac5-b0cf-3a548b6da9ea.png" width="600px" height="400px" />
 
 
 ## Job Post:
 Here we can easily post a job
 
-<img src="https://user-images.githubusercontent.com/64039135/187983236-d513edae-1d03-4dbf-b7e2-fb3d91f30b65.png)" width="1000px" height="400px" />
+<img src="https://user-images.githubusercontent.com/64039135/187983236-d513edae-1d03-4dbf-b7e2-fb3d91f30b65.png" width="500px" height="400px" />
 
 ## Profile:
 This is the profile of a user
