@@ -20,8 +20,6 @@ Go-Jobber website consists of the following pages:
 ## Login/Signup Screen:
 This is the Login and Signup screen, after successfully signin it navigates the home screen.
 
-![image](https://user-images.githubusercontent.com/64039135/188197651-9473fca2-76b3-42cd-8a21-2320cf3ab2d0.png)
-
 ![image](https://user-images.githubusercontent.com/64039135/188195776-19b39377-1bec-4016-adac-8bf0930ea664.png)
 
 
