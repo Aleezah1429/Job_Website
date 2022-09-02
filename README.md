@@ -20,6 +20,8 @@ Go-Jobber website consists of the following pages:
 ## Login/Signup Screen:
 This is the Login and Signup screen, after successfully signin it navigates the home screen.
 
+![image](https://user-images.githubusercontent.com/64039135/188197651-9473fca2-76b3-42cd-8a21-2320cf3ab2d0.png)
+
 ![image](https://user-images.githubusercontent.com/64039135/188195776-19b39377-1bec-4016-adac-8bf0930ea664.png)
 
 
@@ -57,7 +59,7 @@ After click the button of apply job, all job description, requirements and exper
 ## Job Search:
 Here we can easily search job
 
-<img src="https://user-images.githubusercontent.com/64039135/187982726-c4ebd918-942d-4ac5-b0cf-3a548b6da9ea.png" />
+![image](https://user-images.githubusercontent.com/64039135/188197939-1b99d7fb-d6e0-4925-b9f0-73aa85fd4239.png)
 
 
 ## Job Post:
