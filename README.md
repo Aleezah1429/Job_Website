@@ -63,7 +63,8 @@ Here we can easily search job
 ## Job Post:
 Here we can easily post a job
 
-<img src="https://user-images.githubusercontent.com/64039135/187983236-d513edae-1d03-4dbf-b7e2-fb3d91f30b65.png" />
+![image](https://user-images.githubusercontent.com/64039135/188201485-eda765af-63d6-4898-b1a0-996af4ef473f.png)
+
 
 ## Profile:
 This is the profile of a user
