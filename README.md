@@ -23,6 +23,8 @@ Go-Jobber website consists of the following pages:
 ## Login/Signup Screen:
 This is the Login and Signup screen, after successfully signin it navigates the home screen.
 
+(email => admin@gmail.com and password => admin123)
+
 ![image](https://user-images.githubusercontent.com/64039135/188195776-19b39377-1bec-4016-adac-8bf0930ea664.png)
 
 
