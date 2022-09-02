@@ -1,6 +1,7 @@
 # GO-JOBBER
 
-Go-Jobber is a job search Website which built on **REACT JS** and **MONGODB** and deploy on **Heroku**.
+Go-Jobber is a job search Website which built on **REACT JS** and **MONGODB**
+Frontend deploy on **firebase** and Backend deploy on **Heroku**.
 
 ## DESCRIPTION
 Go-Jobber website consists of the following pages:
