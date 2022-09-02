@@ -5,7 +5,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors());
 const { MongoClient, ServerApiVersion } = require("mongodb");
-const{Login,loadMongoDb,getData,postData,postJob,getJobs,findData,ContactForm} = require("./functions.js")
+const{Login,loadMongoDb,getData,postData,postJob,getJobs,findData,ContactForm,jobsAccToCategory,SendAlerts,editUserProfile,UserProfile, getStatistics,UpdateAlert} = require("./functions.js")
 
 loadMongoDb()
 
@@ -17,12 +17,18 @@ app.get("/AllUsers", (req, res) => {
   });
 });
 
-
+// All Jobs
 app.get("/AllJobs", (req, res) => {
   var resp = getJobs();
   resp.then((e) => {
     res.send(e);
   });
+});
+
+// All Jobs acc to Category
+app.post("/JobsAccToCategory", (req, res) => {
+  console.log("Jobs acc to category", req.body);
+  jobsAccToCategory(req, res);
 });
 
 
@@ -58,6 +64,43 @@ app.post("/ContactForm", (req, res) => {
   ContactForm(req, res);
 });
 
+
+// For Job Alerts
+app.post("/JobAlerts", (req, res) => {
+  console.log("JobAlerts", req.body);
+  SendAlerts(req, res);
+});
+
+// For Job Alert Update
+app.post("/UpdateAlert", (req, res) => {
+  console.log("UpdateAlert", req.body);
+  UpdateAlert(req, res);
+});
+
+// For User Profile
+app.post("/UserProfile", (req, res) => {
+  console.log("UserProfile", req.body);
+  UserProfile(req, res);
+});
+
+
+// For Edit User Profile
+app.post("/EditProfile", (req, res) => {
+  console.log("EditProfile", req.body);
+  editUserProfile(req, res);
+});
+
+
+// For Satistics
+app.get("/Statistics", (req, res) => {
+  console.log("Statistics", req.body);
+  var resp = getStatistics();
+  resp.then((e) => {
+    res.send(e);
+  });
+});
+
+// getStatistics()
 
 const PORT = process.env.PORT || 8001;
 
