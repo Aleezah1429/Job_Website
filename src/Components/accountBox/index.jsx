@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { LoginForm } from "./loginForm";
+import  LoginForm  from "./loginForm";
 import { motion } from "framer-motion";
 // import {motion} from 'framer-motion/dist/es/index'
 import { AccountContext } from "./accountContext";
 import { SignupForm } from "./signupForm";
 
 const BoxContainer = styled.div`
-  width: 270px;
-  min-height: 495px;
+  width: 300px;
+  height: 520px;
   display: flex;
   flex-direction: column;
   border-radius: 19px;
@@ -16,21 +16,24 @@ const BoxContainer = styled.div`
   box-shadow: 0 0 2px rgba(15, 15, 15, 0.28);
   position: relative;
   overflow: hidden;
+  margin-top:2%;
+  border:2px solid rgb(241, 196, 15)
+
 `;
 
 const TopContainer = styled.div`
   width: 100%;
-  height: 240px;
+  height: 290px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 0 1.8em;
+  padding: 1em 1.8em;
   padding-bottom: 5em;
 `;
 
 const BackDrop = styled(motion.div)`
   width: 160%;
-  height: 550px;
+  height: 530px;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -53,7 +56,7 @@ const HeaderContainer = styled.div`
 `;
 
 const HeaderText = styled.h2`
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 600;
   line-height: 1.24;
   color: #fff;
@@ -64,10 +67,10 @@ const HeaderText = styled.h2`
 const SmallText = styled.h5`
   color: #fff;
   font-weight: 500;
-  font-size: 11px;
+  font-size: 14px;
   z-index: 10;
   margin: 0;
-  margin-top: 7px;
+  // margin-top: 7px;
 `;
 
 const InnerContainer = styled.div`
@@ -86,7 +89,7 @@ const backdropVariants = {
   },
   collapsed: {
     width: "160%",
-    height: "550px",
+    height: "530px",
     borderRadius: "50%",
     transform: "rotate(60deg)",
   },

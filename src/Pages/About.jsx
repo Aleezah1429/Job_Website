@@ -24,12 +24,12 @@ const About = () => {
                 <h1 className='about-heading'>ABOUT US</h1>
             </div>
             <div>
-                <h2 className='descr-heading'> How Jobworld Works for You </h2>
+                <h3 className='descr-heading'> How Jobworld Works for You </h3>
             </div>
             <Row className='about-desc-row'>
                 <Col xs={12} sm={4} m={4} lg={4} className='col-heading'>Perfect Search Tool <br/>
                 <BiSearchAlt style={style} className="icons" /> <br/>
-                <p>
+                <p style={{padding:"5%"}}>
                 Voluptatum corporis officia sapiente magni quo dolorem numquam,
                     accusamus esse excepturi, asperiores necessitatibus molestias aliquam eveniet?
                     Pariatur ducimus perferendis dolorem omnis consequuntur.
@@ -39,7 +39,7 @@ const About = () => {
 
                 <Col xs={12} sm={4} m={4} lg={4} className='col-heading'>Highly Paid Jobs <br/>
                 <RiWallet2Fill style={style} className="icons" /> <br/>
-                <p> 
+                <p style={{padding:"5%"}}> 
                 Voluptatum corporis officia sapiente magni quo dolorem numquam,
                     accusamus esse excepturi, asperiores necessitatibus molestias aliquam eveniet?
                     Pariatur ducimus perferendis dolorem omnis consequuntur.
@@ -49,7 +49,7 @@ const About = () => {
                 <Col xs={12} sm={4} m={4} lg={4} className='col-heading'>5757 Companies <br/>
                 <GiGlobe style={style} className="icons" />
                 <br/>
-                <p> 
+                <p style={{padding:"5%"}}> 
                 Voluptatum corporis officia sapiente magni quo dolorem numquam,
                     accusamus esse excepturi, asperiores necessitatibus molestias aliquam eveniet?
                     Pariatur ducimus perferendis dolorem omnis consequuntur.

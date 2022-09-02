@@ -5,9 +5,10 @@ import Footer from "../Components/Footer"
 import {Button, Row , Col , Pagination} from "react-bootstrap"
 import {useEffect,useState} from "react"
 import useWindowDimensions from "../Components/WindowDImension";
+import { useParams } from "react-router-dom";
 
-
-function JobList() {
+function Category() {
+    const params = useParams();
     const [paginationSize,setpaginationSize] = useState("lg")
     const [paginationStart,setpaginationStart] = useState(0)
     const [paginationEnd,setpaginationEnd] = useState(10)
@@ -17,19 +18,22 @@ function JobList() {
     const [allJobs,setAllJobs] = useState([])
 
     useEffect(()=>{
+        console.log("PARAMS",params.id)
         if(width<500){
           setpaginationSize("sm")
         }
-        console.log("xbxsxnsx;nsnxsnx;sx",width)
       },[width])
 
-
       useEffect(()=>{
-        fetch(process.env.REACT_APP_BASE_URL+'/AllJobs')
-        .then(response => response.json())
-        .then(data =>setAllJobs(data) );
-    
-    },[])
+        fetch(process.env.REACT_APP_BASE_URL+'/JobsAccToCategory', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({jobCategory:params.id})
+        })
+          .then(response => response.json())
+          .then(data => setAllJobs(data.result));
+      },[])
+
 
     const changePage=(page)=>{
       console.log("P",page-1,page*10,(page*10)-10)
@@ -63,7 +67,12 @@ for (let number = 0; number <= 9; number++) {
      
       {/* <div> */}
       <Row style={{marginTop:"5%",marginBottom:"5%"}}>
+        {console.log("ALL JOBS",allJobs.length)}
+        {
+          allJobs.length>=6?
       <Pagination onChange={(e)=>{console.log("e",e)}} size={paginationSize}>{items}</Pagination>
+:null
+        }
 </Row>
       {/* </div> */}
     </div>
@@ -72,4 +81,4 @@ for (let number = 0; number <= 9; number++) {
   );
 }
 
-export default JobList;
+export default Category;

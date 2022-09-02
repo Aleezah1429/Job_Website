@@ -11,6 +11,12 @@ import {
 } from "./common";
 import { Marginer } from "../marginer";
 import { AccountContext } from "./accountContext";
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
+
 
 export function SignupForm(props) {
   const { switchToSignin } = useContext(AccountContext);
@@ -23,21 +29,29 @@ const [msg, setMsg] = useState("");
 const [variant, setvariant] = useState("");
 
 
-// For Toast
-const [show, setShow] = useState(false);
+  // For SnackBar
+  const [open, setOpen] = React.useState(false);
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
+
 
 const save=(data)=>{
   console.log(data)
   setMsg(data.message)
   setvariant(data.variant)
+  setOpen(true)
+  setName("")
+  setEmail("")
+  setPass("")
 
 
 }
-
-
-  useEffect(()=>{
-   
-  })
 
 
   const Submit=()=>{
@@ -47,8 +61,7 @@ const save=(data)=>{
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name,email,pass })
   };
-  setShow(true)
-  fetch('http://localhost:8001/CreateUser', requestOptions)
+  fetch(process.env.REACT_APP_BASE_URL+'/CreateUser', requestOptions)
   .then(response => response.json())
       .then(data => save(data));
 
@@ -58,6 +71,11 @@ const save=(data)=>{
 
   return (
     <>
+    <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity={variant} sx={{ width: '100%' }}>
+          {msg}
+        </Alert>
+      </Snackbar>
     <BoxContainer>
       <FormContainer>
         <Input type="text" placeholder="Full Name" onChange={(e)=>setName(e.target.value)} />
@@ -66,10 +84,6 @@ const save=(data)=>{
         <Input type="password" placeholder="Confirm Password" />
       </FormContainer>
       <Marginer direction="vertical" margin={10} />
-
-      <Toast bg={variant}  onClose={() => setShow(false)} show={show} delay={2500} autohide>
-            <Toast.Body style={{fontSize:"14px",color:"white"}}>{msg}</Toast.Body>
-          </Toast>
 
       <SubmitButton onClick={()=>Submit()} type="submit">Signup</SubmitButton>
       <Marginer direction="vertical" margin="1em" />

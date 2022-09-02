@@ -8,7 +8,6 @@ import {
 } from "react-router-dom";
 import JobCard from "../Components/JobCard";
 import NavBar from "../Components/NavBar";
-
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 import Job from "../Pages/SingleJob";
@@ -19,6 +18,10 @@ import JobSearch from "../Pages/JobSearch";
 import Categories from "../Pages/Categories";
 import JobPost from "../Pages/JobPost";
 import JobList from "../Pages/JobList";
+import Authentication from "../Pages/Authentication";
+import {connect} from "react-redux";
+import Category from "../Pages/Category";
+import JobProfile from "../Pages/JobProfile";
 
 
 
@@ -30,6 +33,13 @@ class AppRouter extends Component {
   render() {
     return (
       <Router>
+      {console.log("USER INFO", this.props.userInfo)}
+        {
+          this.props.userInfo.email=="anonymous@gmail.com" ?
+          
+          <Route exact path="/" component={Authentication} />
+        :
+        <>
         <NavBar/>
           <Route exact path="/" component={Home} />
           <Route exact path="/Job" component={Job} />
@@ -39,16 +49,20 @@ class AppRouter extends Component {
           <Route exact path="/Categories" component={Categories} />
           <Route exact path="/JobPost" component={JobPost} />
           <Route exact path="/AllJobs" component={JobList} />
-
-
-
-
-
-          {/* <Route  path="/JobCard" component={JobCard} /> */}
-<Footer/>
+          <Route exact path="/JobProfile" component={JobProfile} />
+          <Route exact path="/Category/:id" component={Category} />
+          <Footer/>
+          </>
+        }
       </Router>
     );
   }
 }
 
-export default AppRouter;
+function mapStateToProps(state) {
+  return {
+      userInfo:state.userInfo
+  }
+}
+
+export default connect(mapStateToProps,null)(AppRouter);

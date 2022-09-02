@@ -19,7 +19,7 @@ const Contact = () => {
         var message = document.getElementById("message").value
         console.log(name, email, message)
         if (name != "" && email != "" && message != "") {
-            fetch('http://localhost:8001/ContactForm', {
+            fetch(process.env.REACT_APP_BASE_URL+'/ContactForm', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, email, message })

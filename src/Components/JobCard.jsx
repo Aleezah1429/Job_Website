@@ -11,25 +11,25 @@ import {Link,useHistory } from "react-router-dom"
 
 export default function JobCard(props) {
   const history = useHistory();
-
+console.log("JOBBBB",props)
 
 const GoToJob=()=>{
   localStorage.setItem("JOB",JSON.stringify({jobTitle:props.jobTitle,companyDescription:props.companyDescription,
     companyLogo:props.companyLogo,companyName:props.companyName,companyWebsite:props.companyWebsite,jobCategory:props.jobCategory,
     jobDescription:props.jobDescription,jobRequirements:props.jobRequirements,jobSalary:props.jobSalary,
     jobVacancies:props.jobVacancies,companyLocation:props.companyLocation,jobLocation:props.jobLocation,jobType:props.jobType,
-    jobTimings:props.jobTimings
+    jobTimings:props.jobTimings,jobSalary:props.jobSalary,jobGender:props.jobGender
   }))
-  window.location.replace("/Job")
+  history.push("/Job")
 }
 
 
   return (
     <Container className="JobCard">
       <Row>
-          <Col >
+          <Col xs={8} >
           <Row>
-              <h3>{props.jobTitle}</h3>
+              <h4>{props.jobTitle}</h4>
           </Row>
           <Row >
           <Col xs={2} sm={1}  className="JobCardIcon"> <MdLocationPin/></Col>
@@ -53,14 +53,14 @@ const GoToJob=()=>{
           </Row>
           </Col>
           
-          <Col className="btnCol">
+          <Col xs={4} className="btnCol">
     
   <Button className='Job-time-card-btn' variant="flat">
   {props.jobTimings}
   </Button>   
   <br />
   {/* <Link to="/Job"> */}
-  <Button onClick={()=>GoToJob()}  className='Job-card-btn' variant="flat">
+  <Button onClick={()=>GoToJob()}  className='Job-card-btn ' variant="flat">
     Apply
   </Button>
   {/* </Link> */}
