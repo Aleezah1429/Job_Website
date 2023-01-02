@@ -721,6 +721,7 @@ border: 2px solid blue;
     margin-left: 10%;
     margin-bottom: 3%;
     transition-duration: 0.4s;
+    border-width: 0px !important;
 }
 
 .BTN:hover {
